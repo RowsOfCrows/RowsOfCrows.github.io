@@ -1,0 +1,239 @@
+/*======================================*/
+/*=====  v  Edit these things  v  ======*/
+/*======================================*/
+
+:root {
+
+    --image-front: url("https://raw.githubusercontent.com/RowsOfCrows/assets/main/bgmj/planetground.png");
+    --image-front-bottom: 0px;
+    --image-front-speed: 36s;
+
+    --image-mid: url("https://raw.githubusercontent.com/RowsOfCrows/assets/main/bgmj/planetground.png");
+    --image-mid-bottom: 60px;
+    --image-mid-speed: 28s;
+
+    --image-back: url("https://raw.githubusercontent.com/RowsOfCrows/assets/main/bgmj/planetground.png");
+    --image-back-bottom: 120px;
+    --image-back-speed: 18s;
+
+}
+
+/*===============================*/
+
+* {
+    box-sizing: border-box;
+}
+
+/*===============================*/
+/*=====     Background     ======*/
+/*===============================*/
+
+body {
+    background-image: url("https://raw.githubusercontent.com/RowsOfCrows/assets/main/bgmj/blackstarsky.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.reveal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+
+    will-change: transform;
+}
+
+.art {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300vw;
+    /*background-image: var(--image-name);*/
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    background-size: auto 100%;
+}
+
+
+.art--back {
+    background-image: var(--image-back);
+    background-size: 560px;
+    height: 100%;
+    bottom: var(--image-back-bottom);
+    animation: driftBack var(--image-back-speed) linear infinite;
+}
+
+.art--mid {
+    background-image: var(--image-mid);
+    background-size: 560px;
+    height: 100%;
+    bottom: var(--image-mid-bottom);
+    animation: driftMid var(--image-mid-speed) linear infinite;
+}
+
+.art--front {
+    background-image: var(--image-front);
+    background-size: 560px;
+    height: 100%;
+    bottom: var(--image-front-bottom);
+    animation: driftFront var(--image-front-speed) linear infinite;
+}
+
+
+.art::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+}
+
+@keyframes driftBack {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: -560px;
+    }
+}
+
+@keyframes driftMid {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: -560px;
+    }
+}
+
+@keyframes driftFront {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: -560px;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+/*===============================*/
+/*=====     Characters     ======*/
+/*===============================*/
+
+.world {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.characters {
+    position: absolute;
+
+    width: 64px;
+    height: 64px;
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.character--1 {
+    background-image: url("https: //raw.githubusercontent.com/RowsOfCrows/assets/main/bgmj/chasta_icon1.png");
+    right: 50px;
+    bottom: 50px;
+    animation: charactermove 100s linear infinite;
+    animation-delay: -15s;
+}
+
+/*
+.character--2 {
+    background-image: url("character.png");
+    right: 80px;
+    bottom: 80px;
+    animation: charactermove 100s linear infinite;
+    animation-delay: -15s;
+}
+
+
+.character--3 {
+    background-image: url("character.png");
+    right: 120px;
+    bottom: 120px;
+    animation: charactermove 100s linear infinite;
+    animation-delay: -15s;
+}
+
+.character--4 {
+    background-image: url("character.png");
+    right: 120px;
+        bottom: 120px;
+    animation: charactermove 100s linear infinite;
+    animation-delay: -15s;
+}
+
+*/
+@keyframes charactermove {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -200px;
+    }
+}
+
+/*===============================*/
+
+h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 0 0 12px;
+}
+
+p.lead {
+    max-width: 560px;
+    color: #555;
+    line-height: 1.5;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #e3e1dc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #333;
+}
+
+/*===============================*/

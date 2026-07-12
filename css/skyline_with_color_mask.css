@@ -1,0 +1,155 @@
+:root {
+    --back-color: #d9a9a6;
+    --mid-color: #57d98a;
+    --front-color: #6a5acd;
+    --img-w: 2736;
+    --img-h: 832;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #e3e1dc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #333;
+}
+
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+.reveal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    will-change: transform;
+}
+
+.art {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300vw;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+    -webkit-mask-position: 0 bottom;
+    mask-position: 0 bottom;
+    -webkit-mask-image: url("images/planetbackground.png");
+    mask-image: url("images/planetbackground.png");
+}
+
+.art--back {
+    background: var(--back-color);
+    --tile-w: 900px;
+    height: calc(var(--tile-w) * var(--img-h) / var(--img-w));
+    -webkit-mask-size: var(--tile-w) 100%;
+    mask-size: var(--tile-w) 100%;
+    animation: driftBack 60s linear infinite;
+}
+
+.art--mid {
+    background: var(--mid-color);
+    --tile-w: 700px;
+    height: calc(var(--tile-w) * var(--img-h) / var(--img-w));
+    -webkit-mask-size: var(--tile-w) 100%;
+    mask-size: var(--tile-w) 100%;
+    animation: driftMid 34s linear infinite;
+}
+
+.art--front {
+    background: var(--front-color);
+    --tile-w: 560px;
+    height: calc(var(--tile-w) * var(--img-h) / var(--img-w));
+    -webkit-mask-size: var(--tile-w) 100%;
+    mask-size: var(--tile-w) 100%;
+    animation: driftFront 18s linear infinite;
+}
+
+@keyframes driftBack {
+    from {
+        -webkit-mask-position: 0 bottom;
+        mask-position: 0 bottom;
+    }
+
+    to {
+        -webkit-mask-position: -900px bottom;
+        mask-position: -900px bottom;
+    }
+}
+
+@keyframes driftMid {
+    from {
+        -webkit-mask-position: 0 bottom;
+        mask-position: 0 bottom;
+    }
+
+    to {
+        -webkit-mask-position: -700px bottom;
+        mask-position: -700px bottom;
+    }
+}
+
+@keyframes driftFront {
+    from {
+        -webkit-mask-position: 0 bottom;
+        mask-position: 0 bottom;
+    }
+
+    to {
+        -webkit-mask-position: -560px bottom;
+        mask-position: -560px bottom;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 0 0 12px;
+}
+
+p.lead {
+    max-width: 560px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.scroll-hint {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px 14px;
+    border-radius: 999px;
+    z-index: 2;
+}
