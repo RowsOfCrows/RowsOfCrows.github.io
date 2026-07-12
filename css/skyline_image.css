@@ -259,10 +259,13 @@ section {
 }
 
 /*===============================*/
-
+/* images */
 /*===============================*/
 
-
+.logo {
+    width: min(60vw, 500px);
+    height: auto;
+}
 
 .card {
     margin-top: 28px;
