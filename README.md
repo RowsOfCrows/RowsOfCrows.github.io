@@ -1,4 +1,5 @@
-# Website hosted by Github
+# [Website hosted by Github](https://rowsofcrows.github.io/)
 
 very cool, thanks github
-https://rowsofcrows.github.io/
+
+https://RowsOfCrows.github.io/
