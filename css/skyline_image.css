@@ -1,7 +1,8 @@
 /*======================================*/
 /*============  Hi hayden!!! ===========*/
-/*  make a number negative to go the other directon
-/*  ie. -50px
+/*  add a negative sign for the number in image-layer-direction to go the other directon
+/*  do NOT change the 560 number! just the negative sign
+/*  ie. -560px for left, 560px for right
 /*  the ones labeled bottom are how high up the bottom of the image will sit
 /*  you can change how fast they move
 /*  character settings are farther down the page and slightly more involved
@@ -13,15 +14,17 @@
     --image-front: url("../images/planetground.png");
     --image-front-bottom: 0px;
     --image-front-speed: 36s;
-
+    --image-front-direction: -560px;
+    
     --image-mid: url("../images/planetground2.png");
-    --image-mid-bottom: 60px;
+    --image-mid-bottom: 0px;
     --image-mid-speed: 28s;
-
+    --image-mid-direction: -560px;
+    
     --image-back: url("../images/planetground.png");
     --image-back-bottom: 120px;
     --image-back-speed: 18s;
-
+    --image-back-direction: -560px;
 }
 
 /*===============================*/
@@ -147,7 +150,7 @@ p.lead {
     }
 
     to {
-        background-position-x: -560px;
+        background-position-x: var(--image-back-direction);
     }
 }
 
@@ -157,7 +160,7 @@ p.lead {
     }
 
     to {
-        background-position-x: -560px;
+        background-position-x: var(--image-mid-direction);
     }
 }
 
@@ -167,7 +170,7 @@ p.lead {
     }
 
     to {
-        background-position-x: -560px;
+        background-position-x: var(--image-front-direction);
     }
 }
 
@@ -220,6 +223,12 @@ section {
     animation: charactermove 100s linear infinite;
     animation-delay: -15s;
 }
+
+/* comments are made with the slash star to star slash: /* text */
+/* you can wrap any text in it that you want still commented */
+/* 
+    to uncomment you will have to delete both 
+*/
 
 /*
 .character--2 {
