@@ -11,17 +11,17 @@
 
 :root {
 
-    --image-front: url("../images/planetground.png");
+    --image-front: url("../images/planetground_0.png");
     --image-front-bottom: 0px;
     --image-front-speed: 36s;
     --image-front-direction: -560px;
-    
-    --image-mid: url("../images/planetground2.png");
+
+    --image-mid: url("../images/planetground_4.png");
     --image-mid-bottom: 0px;
     --image-mid-speed: 28s;
     --image-mid-direction: -560px;
-    
-    --image-back: url("../images/planetground.png");
+
+    --image-back: url("../images/planetground_3.png");
     --image-back-bottom: 120px;
     --image-back-speed: 18s;
     --image-back-direction: -560px;
