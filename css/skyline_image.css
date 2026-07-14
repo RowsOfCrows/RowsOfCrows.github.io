@@ -22,7 +22,7 @@
     --image-mid-direction: -560px;
 
     --image-back: url("../images/planetground_3.png");
-    --image-back-bottom: 120px;
+    --image-back-bottom: 0px;
     --image-back-speed: 18s;
     --image-back-direction: -560px;
 }
